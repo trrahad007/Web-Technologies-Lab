@@ -1,0 +1,29 @@
+body {
+    color :#756a55
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 10px;
+}
+
+header {
+    background-color: #624cd0;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
+}
+.profilepic {
+    border-radius: 50%;
+    float: right;
+    text-align: center;
+}
+.profileinfo p {
+    text-align: left;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif
+}
+.profileinfo h2 {
+    color: #ffffff;
+    background-color: #ffb01e;
+    margin: 10px;
+}
