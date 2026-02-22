@@ -19,11 +19,29 @@ header {
 }
 .profileinfo p {
     text-align: left;
-    font-size: 20px;
-    font-family: 'Times New Roman', Times, serif
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 20px;
+    
 }
 .profileinfo h2 {
+    display: inline-block;
     color: #ffffff;
     background-color: #ffb01e;
     margin: 10px;
+}
+.biography {
+    background-color: #f0e6d2;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+}
+.biography h2 {
+    text-align: center;
+    color: #ffffff;
+    background-color: #ffb01e;
+    margin: 10px;
+    display: block;
 }
