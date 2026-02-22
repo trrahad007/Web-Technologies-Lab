@@ -12,10 +12,30 @@ header {
     text-align: center;
     margin: 10px;
 }
-.profilepic {
-    border-radius: 50%;
+.profilepic
+{
     float: right;
     text-align: center;
+    padding-top: 40px;
+    padding-right: 20px;
+
+}
+
+.profilepic img{
+    border-radius: 30%;
+    magrin:0 auto;
+    display: block;
+}
+.profilepic h2{
+    color: #000000;
+    margin-top: 10px;
+}
+
+.profileinfo{
+    background-color: #f0e6d2;
+    padding: 10px;
+    margin: 10px;
+    display: block;
 }
 .profileinfo p {
     text-align: left;
@@ -29,6 +49,7 @@ header {
     color: #ffffff;
     background-color: #ffb01e;
     margin: 10px;
+    padding-right: 5px;
 }
 .biography {
     background-color: #f0e6d2;
