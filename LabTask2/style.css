@@ -18,6 +18,7 @@ header {
     text-align: center;
     padding-top: 40px;
     padding-right: 20px;
+    object-fit: cover;
 
 }
 
@@ -65,4 +66,11 @@ header {
     background-color: #ffb01e;
     margin: 10px;
     display: block;
+}
+footer {
+    background-color: #624cd0;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    text-align: center;
+    margin: 10px;
 }
