@@ -92,3 +92,29 @@ function clearDisplay() {
     document.getElementById("display").value = "";
 }
 </script>
+</head>
+<body>
+<h1>Calculator</h1>
+<div class="calculator">
+    <input type="text" id="display">
+    <div class="buttons">
+        <button onclick="addValue('7')">7</button>
+        <button onclick="addValue('8')">8</button>
+        <button onclick="addValue('9')">9</button>
+        <button onclick="addValue('/')">/</button>
+        <button onclick="addValue('4')">4</button>
+        <button onclick="addValue('5')">5</button>
+        <button onclick="addValue('6')">6</button>
+        <button onclick="addValue('*')">*</button>
+        <button onclick="addValue('1')">1</button>
+        <button onclick="addValue('2')">2</button>
+        <button onclick="addValue('3')">3</button>
+        <button onclick="addValue('-')">-</button>
+        <button onclick="addValue('0')">0</button>
+        <button onclick="clearDisplay()">Clear</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="addValue('+')">+</button>
+    </div>
+</div>
+</body>
+</html>
