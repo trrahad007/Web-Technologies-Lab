@@ -39,3 +39,56 @@ button {
 }
 
 </style>
+<script>
+function addValue(val) {
+    document.getElementById("display").value += val;
+}
+
+function calculate() {
+    var input = document.getElementById("display").value;
+
+    if (input === "") {
+        alert("Please enter something!");
+        return;
+    }
+
+    if (!(input.includes("+") || input.includes("-") || input.includes("*") || input.includes("/"))) {
+        alert("No arithmetic operation found!");
+        return;
+    }
+
+    var last = input[input.length - 1];
+    if (last == "+" || last == "-" || last == "*" || last == "/") {
+        alert("Expression cannot end with an operator!");
+        return;
+    }
+
+    for (var i = 0; i < input.length - 1; i++) {
+        var a = input[i];
+        var b = input[i + 1];
+        if ((a == "+" || a == "-" || a == "*" || a == "/") &&
+            (b == "+" || b == "-" || b == "*" || b == "/")) {
+            alert("Two operators together are not allowed!");
+            return;
+        }
+    }
+
+    for (var i = 0; i < input.length; i++) {
+        var code = input[i].charCodeAt(0); 
+        if (!((code >= 48 && code <= 57) || code == 43 || code == 45 || code == 42 || code == 47 || code == 46)) {
+            alert("Only numbers and operators are allowed!");
+            return;
+        }
+    }
+
+    try {
+        document.getElementById("display").value = eval(input);
+    } catch {
+        alert("Invalid expression!");
+    }
+}
+
+function clearDisplay() {
+    document.getElementById("display").value = "";
+}
+</script>
