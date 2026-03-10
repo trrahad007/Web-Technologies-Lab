@@ -111,7 +111,7 @@ function clearDisplay() {
         <button onclick="addValue('3')">3</button>
         <button onclick="addValue('-')">-</button>
         <button onclick="addValue('0')">0</button>
-        <button onclick="clearDisplay()">Clear</button>
+        <button onclick="clearDisplay()">C</button>
         <button onclick="calculate()">=</button>
         <button onclick="addValue('+')">+</button>
     </div>
