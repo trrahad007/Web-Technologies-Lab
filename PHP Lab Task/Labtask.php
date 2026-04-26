@@ -19,7 +19,7 @@ if (!empty($errors)) {
 
 
 if ($success) {
-    echo "<h3 style='color:green;'>Registration Successful!</h3>";
+    echo "<h3>Registration Successful!</h3>";
 
 
     if (isset($_COOKIE["username"])) {
