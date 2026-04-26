@@ -1,5 +1,6 @@
 <?php
-include 'Validation_form.php';
+
+include 'form.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -7,7 +8,7 @@ include 'Validation_form.php';
     <h1>University Registration Form</h1>
 
 <?php
-// Show errors
+
 if (!empty($errors)) {
     echo "<ul style='color:red;'>";
     foreach ($errors as $error) {
@@ -16,15 +17,21 @@ if (!empty($errors)) {
     echo "</ul>";
 }
 
-// Show success
+
 if ($success) {
-    echo "<h3>Registration Successful!</h3>";
-    echo "<p><strong>Name:</strong> $fullname</p>";
-    echo "<p><strong>Email:</strong> $email</p>";
-    echo "<p><strong>Username:</strong> $username</p>";
-    echo "<p><strong>Age:</strong> $age</p>";
-    echo "<p><strong>Gender:</strong> $gender</p>";
-    echo "<p><strong>Course:</strong> $course</p>";
+    echo "<h3 style='color:green;'>Registration Successful!</h3>";
+
+
+    if (isset($_COOKIE["username"])) {
+        echo "<p style='color:blue;'>Welcome back, " . $_COOKIE["username"] . "! (remembered via cookie)</p>";
+    }
+
+    echo "<p><strong>Name:</strong> "     . $_SESSION["fullname"] . "</p>";
+    echo "<p><strong>Email:</strong> "    . $_SESSION["email"]    . "</p>";
+    echo "<p><strong>Username:</strong> " . $_SESSION["username"] . "</p>";
+    echo "<p><strong>Age:</strong> "      . $_SESSION["age"]      . "</p>";
+    echo "<p><strong>Gender:</strong> "   . $_SESSION["gender"]   . "</p>";
+    echo "<p><strong>Course:</strong> "   . $_SESSION["course"]   . "</p>";
 }
 ?>
 
@@ -36,7 +43,10 @@ if ($success) {
     <input type="email" name="email"><br><br>
 
     <label>Username:</label><br>
-    <input type="text" name="username"><br><br>
+    echo isset($_COOKIE['username']) ? $_COOKIE['username'] : ''; ?>"
+  
+    <input type="text" name="username"
+           value="<?php echo isset($_COOKIE['username']) ? $_COOKIE['username'] : ''; ?>"><br><br>
 
     <label>Password:</label><br>
     <input type="password" name="password"><br><br>
@@ -62,6 +72,9 @@ if ($success) {
 
     <label>
         <input type="checkbox" name="terms"> Accept Terms & Conditions
+    </label><br><br>
+    <label>
+        <input type="checkbox" name="remember"> Remember Me
     </label><br><br>
 
     <input type="submit" value="Register">

@@ -1,5 +1,7 @@
 <?php
-// Initialize variables so the page doesn't crash on first load
+session_start();
+
+
 $errors   = [];
 $success  = false;
 $fullname = $email = $username = $age = $gender = $course = "";
@@ -15,8 +17,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $gender           = isset($_POST["gender"]) ? $_POST["gender"] : "";
     $course           = $_POST["course"];
     $terms            = isset($_POST["terms"]) ? true : false;
+    $remember         = isset($_POST["remember"]); // Remember Me — same as Login.php
 
-    // --- Validations ---
+    
     if (empty($fullname)) {
         $errors[] = "Full Name is required.";
     }
@@ -63,9 +66,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = "You must agree to the Terms & Conditions.";
     }
 
-    // If no errors, set success to true
+    
     if (empty($errors)) {
         $success = true;
+
+        
+        $_SESSION["username"] = $username;
+        $_SESSION["fullname"] = $fullname;
+        $_SESSION["email"]    = $email;
+        $_SESSION["age"]      = $age;
+        $_SESSION["gender"]   = $gender;
+        $_SESSION["course"]   = $course;
+
+        
+        if ($remember) {
+            setcookie("username", $username, time() + (86400 * 30), "/");
+        }
     }
 }
 ?>
